@@ -3,7 +3,7 @@ Reniec - DNI Consultas En Linea Fácil
 
 https://cel.reniec.gob.pe/valreg/valreg.do
 
-El User Script permite realizar las consultas en linea del DNI de una manera facil y comoda, permitiendo que los números del teclado virtual siempre se muestren ordenados y ademas habilita el ingreso directo por teclado del número de DNI a consultar.
+El User Script permite realizar las consultas en linea del DNI de una manera fácil y comoda, permitiendo que los números del teclado virtual siempre se muestren ordenados y ademas habilita el ingreso directo por teclado del número de DNI a consultar.
 
 
 ## Instalación
