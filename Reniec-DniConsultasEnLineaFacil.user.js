@@ -17,13 +17,13 @@ unsafeWindow.Math.ceil = function (x) {
 
 
 document.addEventListener('DOMContentLoaded', function (event) {
-    
+
     var frmConsulta = document.forms[0],
         txtAccion = frmConsulta.accion,
         txtDni = frmConsulta.nuDni,
         txtCodigo = frmConsulta.imagen;
 
-    
+
     txtDni.setAttribute('autofocus', '');
     txtDni.setAttribute('required', '');
     txtDni.setAttribute('pattern', '[0-9]{8}');
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     txtCodigo.setAttribute('pattern', '[a-zA-Z0-9]{4}');
     txtCodigo.removeAttribute('onkeypress');
     txtCodigo.addEventListener('keypress', function (event) {
-        
+
         if (event.keyCode == 13) {
 
             txtAccion.value = 'buscar';
@@ -42,8 +42,8 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     });
     txtCodigo.addEventListener('keyup', function (event) {
-        
+
         this.value = this.value.toUpperCase();
     });
-    
+
 });
