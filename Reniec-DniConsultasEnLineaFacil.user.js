@@ -7,13 +7,16 @@
 // ==/UserScript==
 
 
+
 var contadorTecla = 0;
+
 
 
 unsafeWindow.Math.ceil = function (x) {
 
     return contadorTecla ++;
 };
+
 
 
 document.addEventListener('DOMContentLoaded', function (event) {
@@ -32,18 +35,30 @@ document.addEventListener('DOMContentLoaded', function (event) {
     txtCodigo.setAttribute('required', '');
     txtCodigo.setAttribute('pattern', '[a-zA-Z0-9]{4}');
     txtCodigo.removeAttribute('onkeypress');
-    txtCodigo.addEventListener('keypress', function (event) {
+    txtCodigo.addEventListener('keypress', txtCodigo_keypress);
+    txtCodigo.addEventListener('keyup', txtCodigo_keyup);
 
-        if (event.keyCode == 13) {
 
-            txtAccion.value = 'buscar';
-            frmConsulta.removeAttribute('onsubmit');
-            frmConsulta.submit();
-        }
-    });
-    txtCodigo.addEventListener('keyup', function (event) {
-
-        this.value = this.value.toUpperCase();
-    });
-
+    document.oncontextmenu = null;
+    document.onselectstart = null;
+    document.ondragstart = null;
 });
+
+
+
+function txtCodigo_keypress(event) {
+
+    if (event.keyCode == 13) {
+
+        txtAccion.value = 'buscar';
+
+        frmConsulta.removeAttribute('onsubmit');
+        frmConsulta.submit();
+    }
+}
+
+
+function txtCodigo_keyup(event) {
+
+    this.value = this.value.toUpperCase();
+}
